@@ -1,0 +1,1 @@
+aws secretsmanager create-secret --name rds-credentials2 --description "Credentials for RDS database" --secret-string '{"username":"the_admin","password":"the_password"}' --region eu-central-1
