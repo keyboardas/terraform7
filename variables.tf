@@ -1,9 +1,15 @@
+############################################
+################  GENERAL  #################
+############################################
 variable "region" {
   description = "The AWS region"
   type        = string
   default     = "eu-central-1"
 }
 
+############################################
+#############  VPC & subnets  ##############
+############################################
 variable "vpc_cidr" {
   description = "The CIDR block for the VPC"
   type        = string
@@ -22,6 +28,9 @@ variable "subnets" {
   default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24", "10.0.4.0/24", "10.0.5.0/24"]
 }
 
+############################################
+##################  EC2s  ##################
+############################################
 variable "ami_id" {
   description = "The AMI ID for the EC2 instance"
   type        = string
@@ -43,9 +52,11 @@ variable "key_name" {
 variable "ssh_allowed_ip" {
   description = "The IP address to allow SSH access from"
   type        = string
-  default     = "88.119.140.251/32"
 }
 
+############################################
+##################  RDS  ###################
+############################################
 variable "db_name" {
     description = "The name of the database"
     type        = string
@@ -88,8 +99,10 @@ variable "db_instance_class" {
     default     = "db.t3.micro"
 }
 
+############################################
+################  SECRETS  #################
+############################################
 variable secrets_arn {
   description = "The ARN of the AWS Secrets Manager secret"
   type        = string
-  default = "arn:aws:secretsmanager:eu-central-1:975050221196:secret:rds-credentials2-6TJT6B"
 }
